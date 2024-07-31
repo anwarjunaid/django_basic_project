@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %} signup page {% endblock title %}
+{% block body %}
+<div class="container">
+    <h1>Register here...</h1>
+    <form action="{% url 'signup' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+            <input type="text" class="form-control" id="{{ form.username.id_for_label }}" name="{{form.username.name}}"
+                value="{{form.username.value}}">
+            <span class="text-danger">{{ form.username.errors }}</span>
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.email.id_for_label }}" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="{{ form.email.id_for_label }}" name="{{form.email.name}}"
+                value="{{form.email.value}}">
+            <span class="text-danger">{{ form.email.errors }}</span>
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.password1.id_for_label }}" class="form-label">Password</label>
+            <input type="password" class="form-control" id="{{ form.password1.id_for_label }}"
+                name="{{form.password1.name}}" value="{{form.password1.value}}">
+            <span class="text-danger">{{ form.password1.errors }}</span>
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.password2.id_for_label }}" class="form-label">Re-enter Password</label>
+            <input type="password" class="form-control" id="{{ form.password2.id_for_label }}"
+                name="{{form.password2.name}}" value="{{form.password2.value}}">
+            <span class="text-danger">{{ form.password2.errors }}</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock body %}

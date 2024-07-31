@@ -1,0 +1,8 @@
+# Database file of sqlite3
+db.sqlite3
+
+# Virtualenv
+venv/
+
+# Environment variables
+.env

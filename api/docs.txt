@@ -1,0 +1,10 @@
+Generated URL Patterns
+
+Using DefaultRouter, the following URL patterns are automatically generated for the CompanyViewSet:
+
+    GET /companies/ - List all companies.
+    POST /companies/ - Create a new company.
+    GET /companies/{id}/ - Retrieve a specific company.
+    PUT /companies/{id}/ - Update a specific company.
+    PATCH /companies/{id}/ - Partially update a specific company.
+    DELETE /companies/{id}/ - Delete a specific company.

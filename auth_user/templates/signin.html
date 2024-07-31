@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} signin page {% endblock title %}
+{% block body %}
+<div class="container">
+    <h1>Login here...</h1>
+    <form action="{% url 'signin' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+            <input type="text" class="form-control" id="{{ form.username.id_for_label }}" name="{{form.username.name}}"
+                value="{{form.username.value}}">
+            <span class="text-danger">{{ form.username.errors }}</span>
+        </div>
+        <div class="mb-3">
+            <label for="{{ form.password.id_for_label }}" class="form-label">Password</label>
+            <input type="password" class="form-control" id="{{ form.password.id_for_label }}"
+                name="{{form.password.name}}" value="{{form.password.value}}">
+            <span class="text-danger">{{ form.password.errors }}</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <br>
+        <span class="text-danger">{{ form.non_field_errors }}</span>
+
+    </form>
+</div>
+{% endblock body %}
